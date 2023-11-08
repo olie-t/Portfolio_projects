@@ -61,10 +61,13 @@ def extract_and_transform_data(cur, logger):
         return None
 
     try:
-        wide_df = pd.merge(students_int_df, students_jobs_df, on="job_id")
-        wide_df = pd.merge(students_int_df, courses_df, left_on="current_career_path_id", right_on="career_path_id",
-                           how="left")
-        wide_df.drop("career_path_id", axis=1, inplace=True)
+        wide_df_prep = pd.merge(students_int_df, students_jobs_df, on="job_id")
+        wide_df_prep = pd.merge(students_int_df, courses_df, left_on="current_career_path_id",
+                                right_on="career_path_id",
+                                how="left")
+        wide_df = wide_df_prep[["uuid", "name", "dob", "sex", "contact_info", "job_id", "num_course_taken",
+                                "current_career_path_id", "time_spent_hrs", "career_path_name",
+                                "hours_to_complete"]].copy()
         wide_df = wide_df.astype({"num_course_taken": "Float64", "time_spent_hrs": "Float64"})
         wide_df.set_index(["uuid"])
         logger.info("Wide dataframe created and prepared")

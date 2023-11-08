@@ -15,7 +15,8 @@ For readability and ease of use the majority of the actual logic is contained in
 file.
 
 Descriptions of variables -
-__
+----
+
 
 Input DB - source of data to be transformed and cleaned for analysis.
 
@@ -27,3 +28,8 @@ subscriber_change_log - logs changes to the output DB. Useful for seeing how muc
 
 
 
+Todo still
+----
+Project write up
+
+Unit tests for functions
