@@ -14,6 +14,8 @@ prod environment for anaylsis to be run.
 For readability and ease of use the majority of the actual logic is contained in the subscriber_pipeline_functions.py
 file.
 
+Unittests for the functions can be found in Pipelinetests.py. Covers many scenarios for testing. 
+
 Descriptions of variables -
 ----
 
@@ -32,4 +34,3 @@ Todo still
 ----
 Project write up
 
-Unit tests for functions
